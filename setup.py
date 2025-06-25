@@ -6,7 +6,8 @@ setup(
     description="Web search utility with DuckDuckGo and PDF/HTML content extraction",
     author="Nishio",
     url="https://github.com/west0714/web_search",
-    packages=find_packages(),
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},   
     install_requires=[
         "requests",
         "beautifulsoup4",
