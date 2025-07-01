@@ -1,1 +1,34 @@
-# web_search
+# WebSearcher
+
+`WebSearcher` は、DuckDuckGo を用いた簡易ウェブ検索ツールです。企業名や製品名などのキーワードに基づき検索を行い、検索結果のページ内容（本文＋表など）を自動で取得・整形します。
+
+---
+
+## 機能
+
+- DuckDuckGo検索による情報収集（Google API不要）
+- 複数の製品名に対して企業名を結合した検索クエリを自動生成
+- 上位2件の検索結果URLから本文を自動抽出
+- PDFリンクにも対応（PyMuPDFで解析）
+- HTML内の `<table>` 要素を本文と別で抽出・合成
+- 各クエリにランダムな待機時間を入れてスパム回避
+
+---
+
+## 使用方法
+### １. インストール
+```python
+pip install git+https://github.com/west0714/web_search.git
+```
+
+### ２. 実行コード
+```python
+from web_search import WebSearcher
+
+keyword = {
+    "enterprise": "トヨタ",
+    "product": ["クラウン", "プリウス"]
+}
+searcher = WebSearcher(keyword)
+results = searcher.total_actions()
+```
