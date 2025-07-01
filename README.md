@@ -32,3 +32,23 @@ keyword = {
 searcher = WebSearcher(keyword)
 results = searcher.total_actions()
 ```
+### 3. 出力
+```python
+[
+  {
+    'query': 'トヨタクラウン',
+    'results': [
+      {
+        'link': 'https://...',
+        'content': 'クラウンの公式ページ...'
+      },
+      {
+        'link': 'https://...',
+        'content': '2025年に発売された新型クラウン（エステート）の詳細情報...'
+      },
+      ...
+    ]
+  }
+  ...
+]
+```
