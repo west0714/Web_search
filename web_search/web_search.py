@@ -38,9 +38,15 @@ class WebSearcher:
             tables = ''.join([str(table) for table in body.find_all('table')])
             for table in body.find_all('table'):
                 table.extract()
+            
+            # headerとfooterを削除
+            for header in body.find_all('header'):
+                header.decompose()
+            for footer in body.find_all('footer'):
+                footer.decompose()
             text = body.get_text(strip=True, separator="\n")
             content = text + tables
-        return content.replace('\n', '')
+        return content
 
     #DuckDuckGoで検索結果を取得する return:list link
     def duckduckgo_search(self, query):
