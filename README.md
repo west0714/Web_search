@@ -29,8 +29,7 @@ keyword = {
     "enterprise": "トヨタ",
     "product": ["クラウン", "プリウス"]
 }
-searcher = WebSearcher(keyword)
-results = searcher.total_actions()
+searcher = WebSearcher(keyword).results
 ```
 ### 3. 出力
 ```python
