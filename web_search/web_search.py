@@ -12,6 +12,7 @@ import random
 class WebSearcher:
     def __init__(self, keyword):
         self.keyword = keyword
+        self.results = self.total_actions()  # インスタンス生成時に自動実行
       
     #queryのテンプレートが決まっていればここで作成
     def marge_keyword(self):
